@@ -22,7 +22,6 @@ let collapseFolderEvent = ({ folderId: thisId }) => {
    if (!FolderUtils.isFolderExpanded(thisId)) return;
    UserSettingsProtoStore.settings.guildFolders.folders.filter(f => f.id && FolderUtils.isFolderExpanded(Number(f.id.value))).forEach((folder) => {
       if (Number(folder.id.value) == thisId) return;
-      // @ts-ignore
       Dispatcher.dispatch({ type: 'TOGGLE_GUILD_FOLDER_EXPAND', folderId: Number(folder.id.value) });
    });
 };
@@ -31,7 +30,6 @@ let channelSelectEvent = ({ guildId: thisId }) => {
    if (getBoolean('FolderCollapse', 'collapseOnDM', false)) {
       if (thisId === null) {
          UserSettingsProtoStore.settings.guildFolders.folders.filter(f => f.id && FolderUtils.isFolderExpanded(Number(f.id.value))).forEach((folder) => {
-            // @ts-ignore
             Dispatcher.dispatch({ type: 'TOGGLE_GUILD_FOLDER_EXPAND', folderId: Number(folder.id.value) });
          });
       }
