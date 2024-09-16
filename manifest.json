@@ -1,0 +1,12 @@
+{
+   "name": "FolderCollapse",
+   "version": "1.0.0",
+   "description": "Collapse folders automatically when you open another one",
+   "color": "#FFFEB1",
+   "authors": [
+      {
+         "name": "Niko",
+         "id": "341377368075796483"
+      }
+   ]
+}
